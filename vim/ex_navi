@@ -1,0 +1,27 @@
+    /* Exercise 1 */
+
+    //Delete the typo iin this line of text with one button press
+
+    /* Exercise 2 */
+    //Delete this line with two button presses
+ 
+    /* Exercise 3  */
+    //Delete the following word with two button presses: DELETEME
+
+    /* Exercise 4 */
+    // Copy and paste this line with 3 button presses
+
+    /* Exercise 5  */
+    //Select this line,
+    //And this line,
+    //And also this one, with visual mode, and delete or copy/paste
+    
+    /* Exercise 6  */
+    Remove the indentation of all lines with one command using find/replace
+
+    /* Exercise 7  */
+    Now press CTRL+n to open up NERDtree
+    Switch over to vimrc_1 and back
+    Want to show/hide the sidebar? Use CTRL+t
+    Now open up vimrc_1 in split screen with this file, use ? in NERDtree to find out how
+    Use CTRL + w w to switch between open windows, use CTRL + w  h/j/k/l for left/down/up/right windows 
