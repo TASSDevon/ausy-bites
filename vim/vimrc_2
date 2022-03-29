@@ -1,0 +1,79 @@
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set backspace=2		" more powerful backspacing
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+let skip_defaults_vim=1
+
+" Plugins
+" =================
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'https://github.com/itchyny/lightline.vim'
+
+Plug 'https://github.com/altercation/vim-colors-solarized'
+
+Plug 'https://github.com/frazrepo/vim-rainbow'
+
+" Initialize plugin system
+call plug#end()
+
+" Useful Defaults
+"=========================
+
+syntax on
+set number
+
+" Sane backspace
+set backspace=indent,eol,start
+
+" 1 tab = 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Convert tabs to spaces
+set expandtab
+
+"Always try to show 10 lines above and below the cursor location:
+set scrolloff=10
+
+"Change to the correct indention and plugins dependent on the file type
+filetype plugin indent on
+
+"Copy and paste from the system clipboard, and avoid indentation issues:
+noremap <leader>y "+y
+noremap <leader>p "+p
+
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+set laststatus=2
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+au FileType c,cpp,objc,objcpp,rs call rainbow#load()
+
